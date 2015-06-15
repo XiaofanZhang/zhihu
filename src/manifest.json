@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Getting started example",
+  "description": "This extension blocks element from blocked users for website zhihu",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Blocked Users",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+      "tabs",
+  "notifications",
+  "http://*/",
+  "https://*/",
+      "storage"
+  ],
+  "content_scripts":[{
+      "matches":["http://*.zhihu.com/*"],
+      "js":["contentscript.js"]
+  }],
+  "background": {
+      "scripts": ["background.js", "importUsers.js"]
+  }
+}

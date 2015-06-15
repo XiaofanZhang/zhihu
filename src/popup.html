@@ -1,0 +1,21 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>导入知乎屏蔽用户</title>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+  </head>
+  <body>
+      <div> 
+          <label>请打开知乎屏蔽用户页面以便导入用户</label>
+      </div>
+      <button id="import">导入</button>
+      <div id="message" class="message"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
+
