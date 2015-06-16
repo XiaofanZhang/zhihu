@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension blocks element from blocked users for website zhihu",
-  "version": "1.0",
+  "name": "知乎屏蔽助手",
+  "description": "屏蔽助手能将网页中拉黑用户的部分屏蔽掉",
+  "version": "0.2",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -12,14 +12,12 @@
   },
   "permissions": [
       "tabs",
-  "notifications",
-  "http://*/",
-  "https://*/",
+      "http://*.zhihu.com/",
       "storage"
   ],
   "content_scripts":[{
       "matches":["http://*.zhihu.com/*"],
-      "js":["contentscript.js"]
+      "js":["mutation-summary.js", "contentscript.js"]
   }],
   "background": {
       "scripts": ["background.js", "importUsers.js"]
